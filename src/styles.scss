@@ -1,1 +1,234 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import '~bs-stepper/dist/css/bs-stepper.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@500&display=swap');
+
+
+
+html, 
+body {
+   margin: 0; 
+   font-family:"Helvetica Neue", sans-serif;
+   background-color: white;
+   overflow-x: hidden;
+  }
+
+  
+@font-face {
+  font-family:'awesome';
+  src: url(assets/font/fontawesome-webfont.ttf);
+   
+}
+
+@font-face {
+font-family:'poppins-light';
+src: url(assets/font/poppins/Poppins-Light.ttf);
+ 
+}
+
+@font-face {
+font-family:'bebas-nehue';
+src: url(assets/font/Bebas_Neue/BebasNeue-Regular.ttf);
+ 
+}
+
+@font-face {
+font-family:'luckiestGuy';
+src: url(assets/font/Luckiest_Guy/LuckiestGuy-Regular.ttf);
+ 
+}
+
+
+.font{
+  font-family:'poppins-light';
+}
+
+.fs-1{
+  font-size: 0.5em;
+}
+
+.fs-2{
+  font-size: 0.8em;
+}
+
+.fs-3{
+  font-size: 1em;
+}
+
+.fs-4{
+  font-size: 1.2em;
+}
+
+.fs-5{
+  font-size: 1.3em;
+}
+
+.fs-6{
+  font-size: 1.5em;
+}
+
+.fs-7{
+  font-size: 1.7em;
+}
+
+.fs-8{
+  font-size: 2em;
+}
+
+
+.fs-9{
+  font-size: 3em;
+}
+
+.f-w{
+  color: white;
+}
+.pd-5{
+  padding: 5px;
+}
+
+.pd-10{
+  padding: 10px;
+}
+
+
+.btnFilled{
+  font-family:'poppins-light';
+  background-color: red;
+  color: white;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mt-15{
+  margin-top: 15px;
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
+.mt-25{
+  margin-top: 25px;
+}
+
+.mt-30{
+  margin-top: 30px;
+}
+
+.mt-40{
+  margin-top: 40px;
+}
+
+.mt-50{
+  margin-top: 50px;
+}
+
+.mt-60{
+  margin-top: 60px;
+}
+
+.mt-70{
+  margin-top: 70px;
+}
+
+.mt-80{
+  margin-top: 80px;
+}
+
+.mt-100{
+  margin-top: 100px;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.mb-15{
+  margin-bottom: 15px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.mb-25{
+  margin-bottom: 25px;
+}
+
+.mb-30{
+  margin-bottom: 30px;
+}
+
+.mb-40{
+  margin-bottom: 40px;
+}
+
+.mb-50{
+  margin-bottom: 50px;
+}
+
+.mb-60{
+  margin-bottom: 60px;
+}
+
+.mb-70{
+  margin-bottom: 70px;
+}
+
+.mb-80{
+  margin-bottom: 80px;
+}
+
+.mb-100{
+  margin-bottom: 100px;
+}
+.ml-10{
+  margin-left: 10px;
+}
+
+.animate__animated.animate__fadeIn{
+  --animate-duration: 2s;
+}
+
+.card{
+  font-family: "poppins-light";
+  font-size: 1.1em;
+}
+
+.btnMenuClicked, .btnMenu {
+  font-size: min(1.2em, 6vw); /* tamaño de fuente máximo: 16px o 5% del ancho de la pantalla */
+  padding: 8px 10px; /* espaciado interno del botón */
+  height: 60px !important;
+  border-radius: 6px !important;
+  font-family: 'poppins-light';
+  white-space: nowrap !important;
+}
+
+.btnMenuClicked i, .btnMenu i {
+  font-size: min(1.2em, 6vw); /* tamaño del icono máximo: 20px o 6% del ancho de la pantalla */
+}
+
+.btnMenuClicked {
+  background-color: green;
+  color: white;
+  border: 1px solid white;
+}
+
+.btnMenu {
+  border: 1px solid green;
+  background-color: white;
+  color: green;
+}
+
+.my-custom-modal .modal-dialog{
+  max-width: 60vw !important;
+  max-height: 25vh !important;
+  border-radius: 15px !important;
+  margin: 0 auto;
+  background-color: white;
+}
+
