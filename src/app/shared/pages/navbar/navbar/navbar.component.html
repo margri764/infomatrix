@@ -1,45 +1,86 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light font whiteFrame">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="assets/logo-info.jpg" width="120px"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Nosotros</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Evento
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
-              <li><a class="dropdown-item" href="#">Programa</a></li>
-              <li><a class="dropdown-item" href="#">Stand</a></li>
-              <li><a class="dropdown-item" href="#">Presentación</a></li>
-              <li><a class="dropdown-item" href="#">Proyectos</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Algo mas destacado</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Sede
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Localidad</a></li>
-              <li><a class="dropdown-item" href="#">Como llegar</a></li>
-              <li><a class="dropdown-item" href="#">Alojamiento</a></li>
-              <li><a class="dropdown-item" href="#">Exposición</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Mapa</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Contacto</a>
-          </li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light font whiteFrame "  >
+  <div class="container-fluid justify-content-between" >
+    <a class="navbar-brand" >
+      <img src="assets/logo-info.png" [width]="width">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+<div   [ngStyle]="!phone ? {'visibility': 'hidden'} : {'display':'none'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dignissimos, rem incidunt vitae iste expedita iusto sint aliquam cumque, sapiente error distinctio eaque quis voluptates fugit pariatur minus, necessitatibus odio.</div>    
+    <div class="collapse navbar-collapse " id="navbarSupportedContent"> 
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+        
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#" [ngStyle]="!phone ? {'margin-right': '20px'} : {}">Nosotros</a>
+      </li>
+
+      <li class="nav-item dropdown" [ngStyle]="!phone ? {'margin-right': '20px'} : {}">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" st>
+          Evento
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+          <li><a class="dropdown-item" routerLink="../programa">Programa</a></li>
+          <li><a class="dropdown-item" href="#">Stand</a></li>
+          <li><a class="dropdown-item" href="#">Presentación</a></li>
+          <li><a class="dropdown-item" href="#">Proyectos</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Algo mas destacado</a></li>
         </ul>
-      </div>
+      </li>
+
+      <li class="nav-item dropdown" [ngStyle]="!phone ? {'margin-right': '20px'} : {}">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Sede
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" routerLink="/localidad">Localidad</a></li>
+          <li><a class="dropdown-item" routerLink="/como-llegar">Como llegar</a></li>
+          <li><a class="dropdown-item" routerLink="/alojamiento">Alojamiento</a></li>
+          <li><a class="dropdown-item" routerLink="/exposicion">Exposición</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" routerLink="/mapa">Mapa</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item" [ngStyle]="!phone ? {'margin-right': '20px'} : {}">
+        <a class="nav-link active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Contacto</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+</nav>
+
+
+
+
+  <!-- start offcanvas -->
+ 
+  <div class="offcanvas offcanvas-end font" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"> <b>Contactos</b> </h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-  </nav>
+    <div class="offcanvas-body">
+        
+      <p class="mt-40">clubcienciaeureka@gmail.com</p>
+
+      <p>Lucas Martin Mazzaroni <br> 
+        &nbsp; +54 2302 469810 <br>
+        &nbsp; lucas.mazzaroni@lapampa.edu.ar
+      </p>
+
+      <p>Marcos Fierro Centurión <br> 
+        &nbsp; +54 2302 307837 <br>
+        &nbsp; marcos.Fierro@lapampa.edu.ar
+      </p>
+
+
+    </div>
+  </div>
+
+  <!-- end offcanvas -->
   

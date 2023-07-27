@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  phone :  boolean = false;
+  width : number = 100;
+
+  constructor() {
+
+    (screen.width <= 600) ? [this.phone = true , this.width = 80] : [this.phone = false, this.width = 100]
+   }
 
   ngOnInit(): void {
   }
