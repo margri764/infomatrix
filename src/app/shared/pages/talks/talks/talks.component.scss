@@ -1,0 +1,106 @@
+
+.shadow{
+
+    width: 97%;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(210, 210, 210, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(174, 173, 173, 0.75);
+}
+
+.card:hover{
+    border: 1px solid green;
+    cursor: pointer;
+}
+
+.card{
+    width: 300px;
+    height: 80px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: rgb(10, 143, 238);  
+    color: white;
+}
+
+
+
+.selectedFrame{
+    padding: 10px;
+    border-radius: 10px;
+
+    box-shadow: 2px 2px 5px 0px rgba(0, 182, 30, 0.75);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 182, 30, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 182, 30, 0.75);
+    
+    // box-shadow: 0px 1px 9px -2px green;
+    // -webkit-box-shadow: 0px 1px 9px -2px green;
+    // -moz-box-shadow: 0px 1px 9px -2px green;
+}
+
+.baseCard{
+    width: 300px;
+    height: 150px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: white;
+}
+
+
+//Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 575px) {
+  
+    .shadow{
+
+        width: 97%;
+    
+    }
+
+    .card{
+        width: 97%;
+        height: 80px;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        background-color: rgb(10, 143, 238);  
+        color: white;
+    }
+
+    .baseCard{
+        width: 97%;
+        height: 150px;
+    }
+
+}
+
+
+/* medium devices (tablets, 768 px and up) */ 
+@media only screen and (min-width: 859px) {
+
+    .shadow{
+
+        width: 80%;
+    
+    }
+
+    .card-text{
+        font-size: 1.2em;
+    }
+
+}
+    
+
+/* large devices (desktops, 992 px and up) */ 
+@media only screen and (min-width: 992px) {
+
+}
+
+/* x-large devices (desktops, 1200 px and up) */ 
+@media only screen and (min-width: 1200px) {
+    
+    
+
+}
+    
+
+/* XX- Large devices (larger desktops, 1400px and up) */ 
+@media only screen and (min-width: 1400px) {
+
+}

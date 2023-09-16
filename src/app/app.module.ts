@@ -14,6 +14,8 @@ import { HowToGetHerComponent } from './shared/pages/how-to-get-here/how-to-get-
 import { ExibitionComponent } from './shared/pages/exibition/exibition/exibition.component';
 import { MapComponent } from './shared/pages/map/map/map.component';
 import { ScheduleComponent } from './shared/pages/schedule/schedule/schedule.component';
+import { TalksComponent } from './shared/pages/talks/talks/talks.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { ScheduleComponent } from './shared/pages/schedule/schedule/schedule.com
     HowToGetHerComponent,
     ExibitionComponent,
     MapComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    TalksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

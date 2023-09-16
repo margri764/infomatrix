@@ -8,6 +8,7 @@ import { HowToGetHerComponent } from './shared/pages/how-to-get-here/how-to-get-
 import { ExibitionComponent } from './shared/pages/exibition/exibition/exibition.component';
 import { MapComponent } from './shared/pages/map/map/map.component';
 import { ScheduleComponent } from './shared/pages/schedule/schedule/schedule.component';
+import { TalksComponent } from './shared/pages/talks/talks/talks.component';
 
 const routes: Routes = [
   {
@@ -29,8 +30,12 @@ const routes: Routes = [
     path: "exposicion", component: ExibitionComponent
   },
   {
+    path: "conferencias", component: TalksComponent
+  },
+  {
     path: "mapa", component: MapComponent
   },
+
   {
     path: "", redirectTo: "inicio", pathMatch: 'full'
   },

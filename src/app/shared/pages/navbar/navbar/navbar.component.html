@@ -22,12 +22,12 @@
           Evento
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
-          <li><a class="dropdown-item" routerLink="../programa">Programa</a></li>
-          <li><a class="dropdown-item" href="#">Stand</a></li>
-          <li><a class="dropdown-item" href="#">Presentación</a></li>
-          <li><a class="dropdown-item" href="#">Proyectos</a></li>
+          <li><a class="dropdown-item" routerLink="../programa" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Programa</a></li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Stand</a></li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Presentación</a></li>
+          <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Proyectos</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Algo mas destacado</a></li>
+          <li><a class="dropdown-item" routerLink="../conferencias" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Conferencias</a></li>
         </ul>
       </li>
 
@@ -36,17 +36,17 @@
           Sede
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" routerLink="/localidad">Localidad</a></li>
-          <li><a class="dropdown-item" routerLink="/como-llegar">Como llegar</a></li>
-          <li><a class="dropdown-item" routerLink="/alojamiento">Alojamiento</a></li>
-          <li><a class="dropdown-item" routerLink="/exposicion">Exposición</a></li>
+          <li><a class="dropdown-item" routerLink="/localidad" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Localidad</a></li>
+          <li><a class="dropdown-item" routerLink="/como-llegar" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Como llegar</a></li>
+          <li><a class="dropdown-item" routerLink="/alojamiento" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Alojamiento</a></li>
+          <li><a class="dropdown-item" routerLink="/exposicion" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Exposición</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" routerLink="/mapa">Mapa</a></li>
+          <li><a class="dropdown-item" routerLink="/mapa" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Mapa</a></li>
         </ul>
       </li>
 
       <li class="nav-item" [ngStyle]="!phone ? {'margin-right': '20px'} : {}">
-        <a class="nav-link active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Contacto</a>
+        <a class="nav-link active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contacto</a>
       </li>
       
     </ul>
