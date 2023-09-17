@@ -27,4 +27,15 @@ getAllTalks(){
     map( res =>  res )
   )
 }
+
+createInscription( body:any){
+  return this.http.post<any>(`${this.baseUrl}api/courses/inscription`, body)
+  .pipe(
+    tap( (res) => { 
+                  console.log(' desde createInscription', res );
+                } 
+    ),
+    map( res =>  res )
+  )
+}
 }

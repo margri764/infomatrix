@@ -7,10 +7,7 @@
     -moz-box-shadow: 2px 2px 5px 0px rgba(174, 173, 173, 0.75);
 }
 
-.card:hover{
-    border: 1px solid green;
-    cursor: pointer;
-}
+
 
 .card{
     width: 300px;
@@ -24,16 +21,13 @@
 
 
 .selectedFrame{
-    padding: 10px;
-    border-radius: 10px;
-
-    box-shadow: 2px 2px 5px 0px rgba(0, 182, 30, 0.75);
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 182, 30, 0.75);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 182, 30, 0.75);
-    
-    // box-shadow: 0px 1px 9px -2px green;
-    // -webkit-box-shadow: 0px 1px 9px -2px green;
-    // -moz-box-shadow: 0px 1px 9px -2px green;
+    width: 300px;
+    height: 80px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: green;  
+    color: white;
+ 
 }
 
 .baseCard{
@@ -55,17 +49,27 @@
     }
 
     .card{
-        width: 97%;
-        height: 80px;
-        border-top-right-radius: 30px;
-        border-top-left-radius: 30px;
+        width: 95%;
+        height: 96px;
+        border-top-right-radius: 35px;
+        border-top-left-radius: 35px;
         background-color: rgb(10, 143, 238);  
         color: white;
     }
 
     .baseCard{
-        width: 97%;
-        height: 150px;
+        width: 95%;
+        height: 160px;
+    }
+
+    .selectedFrame{
+        width: 95%;
+        height: 96px;
+        border-top-right-radius: 35px;
+        border-top-left-radius: 35px;
+        background-color: green;  
+        color: white;
+
     }
 
 }
