@@ -11,7 +11,7 @@
 
 .card{
     width: 300px;
-    height: 80px;
+    // height: 80px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     background-color: rgb(10, 143, 238);  
@@ -22,7 +22,7 @@
 
 .selectedFrame{
     width: 300px;
-    height: 80px;
+    // height: 80px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     background-color: green;  
@@ -34,6 +34,7 @@
 .baseCard{
     width: 300px;
     height: 150px;
+    padding-top: 15px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     color: white;
@@ -67,7 +68,7 @@
 
     .card{
         width: 95%;
-        height: 110px;
+        // height: 110px;
     }
 
     .baseCard{
@@ -77,7 +78,7 @@
 
     .selectedFrame{
         width: 95%;
-        height: 110px;
+        // height: 110px;
         border-top-right-radius: 35px;
         border-top-left-radius: 35px;
         background-color: green;  
@@ -93,17 +94,17 @@
 
     .card{
         width: 95%;
-        height: 110px;
+        // height: 110px;
     }
 
     .baseCard{
         width: 95%;
-        height: 160px;
+        // height: 160px;
     }
 
     .selectedFrame{
         width: 95%;
-        height: 110px;
+        // height: 110px;
     }
 
     .card-text{
@@ -113,20 +114,6 @@
 }
     
 
-/* large devices (desktops, 992 px and up) */ 
-@media only screen and (min-width: 992px) {
-
-    .card{
-        width: 95%;
-        height: 110px;
-    }
-
-    .baseCard{
-        width: 95%;
-        height: 160px;
-    }
-
-}
 
 /* x-large devices (desktops, 1200 px and up) */ 
 @media only screen and (min-width: 1200px) {
@@ -137,17 +124,17 @@
 
     .card{
         width: 65%;
-        height: 110px;
+        // height: 110px;
     }
 
     .baseCard{
         width: 65%;
-        height: 160px;
+        height: 180px;
     }
 
     .selectedFrame{
         width: 65%;
-        height: 110px;
+        // height: 110px;
     }
 
 }

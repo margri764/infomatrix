@@ -29,28 +29,33 @@
 
           <div fxLayout="row wrap" fxLayoutAlign="start center"   [ngClass]="i.class == true ? 'selectedFrame':'card'" style="margin-top: 80px;" >
 
-              <div fxLayout="row wrap" fxLayoutAlign="space-between start" fxFlex="100" >
+              <div fxLayout="row wrap" fxLayoutAlign="space-between start" fxFlex="100" style="padding: 10px;" >
                   <span class="card-title font" style="font-size: 0.9em; width: 80%;"><b>{{talk.subject}}</b></span> 
-                  <span class="material-icons notranslate " style="cursor: pointer;" (click)="delCard(talk)">close</span>
+                  <span class="material-icons notranslate " style="cursor: pointer;" (click)="delCard(talk)" *ngIf="talk.class">close</span>
               </div>
 
               <div fxLayout="row wrap"  fxLayoutAlign="space-between center" fxFlex="100">
-                  <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="50">
+                  <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="60">
                     <span class=" material-icons notranslate">alarm_on</span> &nbsp;&nbsp;
                     <span>{{talk.time}} hs</span>
                   </div>
-                  <div fxLayout="row wrap"  fxLayoutAlign="end center" fxFlex="50" >
-                    <span class=" material-icons notranslate">home</span> &nbsp;&nbsp;
-                    <span class="card-text font"> {{talk.location}}</span> <br>
+                  <div fxLayout="row wrap"  fxLayoutAlign="end center" fxFlex="40" >
+                    <span class=" material-icons notranslate" style="transform: scale(1.3);">groups</span> &nbsp;&nbsp;
+                    <span class="card-text font"> {{talk.participantes}}</span> <br>
                   </div>
               </div>
           </div>
           
-          <div fxLayout="row wrap" fxLayoutAlign="space-around center"  class="baseCard shadow"  >
-            <img src="assets/avatar.jpg"  alt="avatar" style="max-height: 90px; border-radius: 28%; margin-top: 10px;" >
-            <span class="card-text font" style="color: black; text-align: start" fxFlex="20"><b>{{talk.speaker}}</b></span> 
-            <div fxFlex="50"></div>
-            <div fxLayout="row wrap" fxLayoutAlign="end center" fxFlex="100" >
+          <div fxLayout="row wrap" fxLayoutAlign="space-between start" class="baseCard shadow"  >
+            <span class="card-text font" style="color: rgb(133, 133, 133); text-align: start; padding: 5px;" fxFlex="50">Disertante <br><b style="color: black;">{{talk.speaker}}</b></span> 
+            <span class="card-text font" style="color: rgb(133, 133, 133); text-align: start; padding: 5px;"  fxFlex="50" > Perfil <br><b style="color: black;">{{talk.perfil}}</b></span> 
+
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="100" style="margin-top: 10px;">
+            
+              <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="50" style="padding: 5px;">
+                  <span class="material-icons notranslate" style="color: rgb(103, 103, 103);">home</span> &nbsp;&nbsp; <span style="color: black;">{{talk.location}} </span>
+              </div>    
+
               <button type="button" class="btn btn-sm shadow font"  [ngStyle]="{'background-color': i.class ? 'green' : 'rgb(10, 143, 238)'}"   style=" color: white; border-radius: 9px; padding: 8px;max-width: 100px; margin-right: 10px;" (click)="selectCard(talk)">Inscribirme</button>
               
             </div>
