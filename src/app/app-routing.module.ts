@@ -9,6 +9,8 @@ import { ExibitionComponent } from './shared/pages/exibition/exibition/exibition
 import { MapComponent } from './shared/pages/map/map/map.component';
 import { ScheduleComponent } from './shared/pages/schedule/schedule/schedule.component';
 import { TalksComponent } from './shared/pages/talks/talks/talks.component';
+import { LoginComponent } from './shared/pages/login/login/login.component';
+import { InscriptionComponent } from './shared/pages/inscription/inscription/inscription.component';
 
 const routes: Routes = [
   {
@@ -32,8 +34,15 @@ const routes: Routes = [
   {
     path: "conferencias", component: TalksComponent
   },
+
+  {
+    path: "inscriptos", component: InscriptionComponent
+  },
   {
     path: "mapa", component: MapComponent
+  },
+  {
+    path: "login", component: LoginComponent
   },
 
   {

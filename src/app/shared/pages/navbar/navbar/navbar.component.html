@@ -23,9 +23,9 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
           <li><a class="dropdown-item" routerLink="../programa" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Programa</a></li>
-          <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Stand</a></li>
-          <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Presentación</a></li>
-          <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Proyectos</a></li>
+          <!-- <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Stand</a></li> -->
+          <!-- <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Presentación</a></li> -->
+          <!-- <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Proyectos</a></li> -->
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" routerLink="../conferencias" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Conferencias</a></li>
         </ul>
@@ -48,6 +48,19 @@
       <li class="nav-item" [ngStyle]="!phone ? {'margin-right': '20px'} : {}">
         <a class="nav-link active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contacto</a>
       </li>
+
+      <li class="nav-item" [ngStyle]="!phone ? {'margin-right': '20px'} : {}" routerLink="/inscriptos" *ngIf="inscription" style="cursor: pointer;">
+        <a class="nav-link active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Inscriptos</a>
+      </li>
+
+      <li class="nav-item" [ngStyle]="!phone ? {'margin-right': '20px'} : {}" routerLink="/login" style="cursor: pointer;" *ngIf="!inscription">
+        <a class="nav-link active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Login</a>
+      </li>
+
+      <li class="nav-item" [ngStyle]="!phone ? {'margin-right': '20px'} : {}" *ngIf="inscription" style="cursor: pointer;" (click)="logout()">
+        <a class="nav-link active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Logout</a>
+      </li>
+
       
     </ul>
   </div>

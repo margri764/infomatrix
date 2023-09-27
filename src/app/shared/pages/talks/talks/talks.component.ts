@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { log } from 'console';
 import { TalksService } from 'src/app/shared/services/talks/talks.service';
 
@@ -8,7 +8,7 @@ import { TalksService } from 'src/app/shared/services/talks/talks.service';
   templateUrl: './talks.component.html',
   styleUrls: ['./talks.component.scss']
 })
-export class TalksComponent implements OnInit {
+export class TalksComponent implements OnInit, OnDestroy {
 
   talks : any [] = [];
   isLoading : boolean = false;
@@ -22,6 +22,13 @@ export class TalksComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+         console.log( event.url);
+   
+      }
+    });
 
     this.isLoading = true;
 
@@ -64,7 +71,7 @@ export class TalksComponent implements OnInit {
   saveTalks(){
 
     console.log(this.arrCards);
-
+    this.isLoading = true;
     const body = {
           firstName: "Vanina",
           lastName: "Garay",
@@ -78,12 +85,21 @@ export class TalksComponent implements OnInit {
         if(success){
           alert("Exito");
           this.arrCards = [];
-          this.router.navigateByUrl('/inicio')
+          // esta logica va en un popup
+           this.isLoading = false 
+          setTimeout(()=>{
+            this.router.navigateByUrl('/inicio')
+          },1000)
         }
       })
 
   }
   showSelectedClass : boolean = false;
+
+
+  ngOnDestroy(): void {
+    // alert('no salir')
+  }
 
 
 

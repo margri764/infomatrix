@@ -1,0 +1,38 @@
+
+<div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" style="background-color: rgb(245, 245, 245); height: 100vh;">
+
+    <ng-container *ngFor="let talk of talks, let i" >     
+    
+        <!-- start card -->
+  
+            <div fxLayout="row wrap" fxLayoutAlign="center center" class=" shadow" style="padding: 25px; padding-top: 35px; margin-top: 30px;" class="card"  >
+                <div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="100">
+                    <span class="card-title font" style="font-size: 1em;"><b>{{talk.subject}}</b></span> 
+                    <!-- <span class="material-icons notranslate cursor" (click)="delCard(talk)">close</span> -->
+                </div>
+  
+                <div fxLayout="row wrap" fxLayoutAlign.xs="start center" fxLayoutAlign="space-between center" fxFlex="100">
+                    <div fxLayout="row wrap" fxLayoutAlign.xs="start center" fxLayoutAlign="start center" fxFlex="50">
+                      <span class=" material-icons notranslate">alarm_on</span> &nbsp;&nbsp;
+                      <span>{{talk.time}} hs</span>
+                    </div>
+                    <div fxLayout="row wrap" fxLayoutAlign.xs="start center" fxLayoutAlign="end center" fxFlex="50">
+                      <span class=" material-icons notranslate">home</span> &nbsp;&nbsp;
+                      <span class="card-text font"> {{talk.location}}</span> <br>
+                    </div>
+                </div>
+            </div>
+            
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center"  class="baseCard shadow"  >
+              <img src="assets/avatar.jpg"  alt="avatar" style="max-height: 90px; border-radius: 28%; margin-top: 10px;" >
+              <span class="card-text font" style="color: black; text-align: start" fxFlex="20"><b>{{talk.speaker}}</b></span> 
+              <div fxFlex="50"></div>
+              <div fxLayout="row wrap" fxLayoutAlign="end center" fxFlex="100" >
+                <span class="btn btn-sm shadow font"  [ngStyle]="{'background-color': i.class ? 'green' : 'rgb(10, 143, 238)'}"   style=" color: white; border-radius: 9px; padding: 8px; max-width: 100px; margin-right: 10px;" >Inscriptos {{subject1}}</span>
+                
+              </div>
+            </div>
+      </ng-container>
+
+
+</div>

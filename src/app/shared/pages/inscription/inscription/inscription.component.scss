@@ -1,0 +1,127 @@
+
+.shadow{
+
+    width: 97%;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(210, 210, 210, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(174, 173, 173, 0.75);
+}
+
+
+
+.card{
+    width: 00px;
+    height: 80px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: rgb(10, 143, 238);  
+    color: white;
+}
+
+
+
+.baseCard{
+    width: 300px;
+    height: 150px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: white;
+    background-color: white;
+}
+
+
+//Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 575px) {
+  
+    .shadow{
+
+        width: 97%;
+    
+    }
+
+    .card{
+        width: 95%;
+        height: 96px;
+        border-top-right-radius: 35px;
+        border-top-left-radius: 35px;
+        background-color: rgb(10, 143, 238);  
+        color: white;
+    }
+
+    .baseCard{
+        width: 95%;
+        height: 160px;
+    }
+
+}
+
+
+/* medium devices (tablets, 768 px and up) */ 
+@media only screen and (min-width: 859px) {
+
+    .shadow{
+
+        width: 80%;
+    
+    }
+
+    .card-text{
+        font-size: 1.2em;
+    }
+
+    .card{
+        width: 80%;
+ 
+    }
+
+    .baseCard{
+        width: 80%;
+    }
+
+}
+    
+
+/* large devices (desktops, 992 px and up) */ 
+@media only screen and (min-width: 992px) {
+
+    .card{
+        width: 80%;
+ 
+    }
+
+    .baseCard{
+        width: 80%;
+    }
+
+}
+
+/* x-large devices (desktops, 1200 px and up) */ 
+@media only screen and (min-width: 1200px) {
+    
+    .card{
+        width: 60%;
+ 
+    }
+
+    .baseCard{
+        width: 60%;
+    }
+
+
+}
+    
+
+/* XX- Large devices (larger desktops, 1400px and up) */ 
+@media only screen and (min-width: 1400px) {
+
+    
+    .card{
+        width: 800px;
+    }
+
+    .baseCard{
+        width: 800px;
+        height: 190px;
+    }
+
+}
