@@ -1,4 +1,6 @@
-// @import "bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+
+
 
 
 html, 
@@ -15,7 +17,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,8 +254,3 @@ src: url(assets/font/Luckiest_Guy/LuckiestGuy-Regular.ttf);
 
 
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';

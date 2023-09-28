@@ -18,6 +18,16 @@
            <!-- <app-header *ngIf=" (router.url === '/home') && !phone"></app-header> -->
        
           <router-outlet > </router-outlet> 
+
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" *ngIf="showLabel" class="loading-overlay">
+                <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="97" style="background-color: white; border-radius: 12px; padding: 20px; border: 4px solid rgb(14, 121, 198);">
+                  <span class="font" style="font-size: 1.1em; text-align: center;"> Necesitamos que confirmes tu inscripción, recuerda que luego de seleccionar las charlas que te interesen,  debes presionar el botón de "Continuar >" </span>
+                  <img src="assets/banner-phone.gif" alt="banner" fxFlex="100">
+            
+                  <button type="button" class="btn btn-sm shadow font"  style="color: white; border-radius: 9px; padding: 8px; width: 120px; margin-right: 10px; background-color: rgb(10, 143, 238);" (click)="continue()">Continuar</button>
+            
+              </div>
+            </div>
         </div>
 
         

@@ -1,38 +1,62 @@
 
-<div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" style="background-color: rgb(245, 245, 245); height: 100vh;">
+<div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" >
+
+  <div fxLayout="row wrap" fxLayoutAlign="center start" fxFlex.xs="100"  fxFlex="80" class="shadow" style=" background-color: rgb(248, 248, 248); margin-top: 5px; height: 100%; " >
+
+    <span class="font" style="font-size: 1.2em; text-align: center; width: 100%; margin-top: 50px;" *ngIf="talks.length === 0">Sin inscripciones</span>
+
 
     <ng-container *ngFor="let talk of talks, let i" >     
-    
-        <!-- start card -->
-  
-            <div fxLayout="row wrap" fxLayoutAlign="center center" class=" shadow" style="padding: 25px; padding-top: 35px; margin-top: 30px;" class="card"  >
-                <div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="100">
-                    <span class="card-title font" style="font-size: 1em;"><b>{{talk.subject}}</b></span> 
-                    <!-- <span class="material-icons notranslate cursor" (click)="delCard(talk)">close</span> -->
-                </div>
-  
-                <div fxLayout="row wrap" fxLayoutAlign.xs="start center" fxLayoutAlign="space-between center" fxFlex="100">
-                    <div fxLayout="row wrap" fxLayoutAlign.xs="start center" fxLayoutAlign="start center" fxFlex="50">
-                      <span class=" material-icons notranslate">alarm_on</span> &nbsp;&nbsp;
-                      <span>{{talk.time}} hs</span>
-                    </div>
-                    <div fxLayout="row wrap" fxLayoutAlign.xs="start center" fxLayoutAlign="end center" fxFlex="50">
-                      <span class=" material-icons notranslate">home</span> &nbsp;&nbsp;
-                      <span class="card-text font"> {{talk.location}}</span> <br>
-                    </div>
-                </div>
-            </div>
-            
-            <div fxLayout="row wrap" fxLayoutAlign="space-around center"  class="baseCard shadow"  >
-              <img src="assets/avatar.jpg"  alt="avatar" style="max-height: 90px; border-radius: 28%; margin-top: 10px;" >
-              <span class="card-text font" style="color: black; text-align: start" fxFlex="20"><b>{{talk.speaker}}</b></span> 
-              <div fxFlex="50"></div>
-              <div fxLayout="row wrap" fxLayoutAlign="end center" fxFlex="100" >
-                <span class="btn btn-sm shadow font"  [ngStyle]="{'background-color': i.class ? 'green' : 'rgb(10, 143, 238)'}"   style=" color: white; border-radius: 9px; padding: 8px; max-width: 100px; margin-right: 10px;" >Inscriptos {{subject1}}</span>
-                
+      
+      <!-- start card -->
+
+          <div fxLayout="row wrap" fxLayoutAlign="start center"   [ngClass]="i.class == true ? 'selectedFrame':'card'" style="margin-top: 80px;" >
+
+              <div fxLayout="row wrap" fxLayoutAlign="space-between start" fxFlex="100" style="padding: 10px;"  >
+                  <span class="card-title font" style="font-size: 0.9em; width: 80%;"><b>{{talk.subject}}</b></span> 
               </div>
+
+              <div fxLayout="row wrap"  fxLayoutAlign="space-between center" fxFlex="100" >
+                  <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="60" >
+                    <span class=" material-icons notranslate">alarm_on</span> &nbsp;&nbsp;
+                    <span>{{ talk.data[0]?.inscription[0]?.time }}</span>
+                  </div>
+                  <div fxLayout="row wrap"  fxLayoutAlign="end center" fxFlex="40" >
+                    <span class=" material-icons notranslate" style="transform: scale(1.3);">groups</span> &nbsp;&nbsp;
+                    <span class="card-text font"> {{ talk.data[0]?.inscription[0]?.participantes }}</span> <br>
+                  </div>
+              </div>
+          </div>
+          
+          <div fxLayout="row wrap" fxLayoutAlign="space-between start" class="baseCard shadow" >
+
+            <span class="card-text font" style="color: rgb(133, 133, 133); text-align: start; padding: 5px;" fxFlex="50">Disertante <br><b style="color: black;" >{{ talk.data[0]?.inscription[0]?.speaker }}</b></span> 
+
+            <!-- <span class="card-text font" style="color: rgb(133, 133, 133); text-align: start; padding: 5px;"  fxFlex="50" > Perfil <br><b style="color: black;">{{talk.fullName}}</b></span>  -->
+            
+
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="100" style="margin-top: 10px;">
+            
+              <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="50" style="padding: 5px;">
+                  <span class="material-icons notranslate" style="color: rgb(103, 103, 103);">home</span> &nbsp;&nbsp; <span style="color: black;" >{{ talk.data[0]?.inscription[0]?.location }} </span>
+              </div>    
+              
+              <span class="material-icons" style="color: rgb(89, 89, 89);" (click)="showAssistant(talk.subject)">visibility </span>
+              
+              <button type="button" class="btn btn-sm shadow font"  [ngStyle]="{'background-color': i.class ? 'green' : 'rgb(10, 143, 238)'}"   style=" color: white; border-radius: 9px; padding: 8px; width: 120px; margin-right: 10px; margin-bottom: 10px;">Inscriptos: &nbsp;{{talk.data.length}} </button>
+              
+              
             </div>
-      </ng-container>
 
-
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" *ngIf=" selectedTalk === talk.subject " style="margin-bottom: 30px;" >
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100" style="padding: 5px;" *ngFor="let data of talk.data" >
+                  <!-- <span class="material-icons notranslate" style="color: rgb(103, 103, 103);">home</span> &nbsp;&nbsp; -->
+                    <span style="color: black;" >{{ data.fullName }},</span> &nbsp;&nbsp;
+                    <span style="color: black;" *ngIf="data.student">Estudiante </span> 
+                    <span style="color: black;" *ngIf="data.teacher">Estudiante </span>
+                </div>  
+            </div>  
+          </div>
+    </ng-container>
+  </div>
 </div>

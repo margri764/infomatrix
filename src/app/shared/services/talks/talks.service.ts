@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class TalksService {
 
   showInscriptions$ : EventEmitter<boolean> = new EventEmitter<boolean>;
+  openInscription$ : EventEmitter<boolean> = new EventEmitter<boolean>;
 
   private baseUrl = environment.baseUrl;
 

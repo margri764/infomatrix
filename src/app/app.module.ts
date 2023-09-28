@@ -19,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './shared/pages/login/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InscriptionComponent } from './shared/pages/inscription/inscription/inscription.component';
+import { FormComponent } from './shared/pages/form/form/form.component';
+import { GenericSuccessComponent } from './shared/pages/generic-success/generic-success/generic-success.component';
+import { GenericErrorComponent } from './shared/pages/generic-error/generic-error/generic-error.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { InscriptionComponent } from './shared/pages/inscription/inscription/ins
     ScheduleComponent,
     TalksComponent,
     LoginComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    FormComponent,
+    GenericSuccessComponent,
+    GenericErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ import { TalksService } from 'src/app/shared/services/talks/talks.service';
 export class InscriptionComponent implements OnInit {
 
   arrInscriptions : any [] = []
-  talks : any [] = [];
+  // talks : any [] = [];
   isLoading = false;
   subject1 : number = 0;
   subject2 : number = 0;
@@ -18,16 +18,16 @@ export class InscriptionComponent implements OnInit {
               private talkService : TalksService
   ) {
 
-    this.talkService.getAllTalks().subscribe(
-      ({courses})=>{
-        if(courses.length !== 0){
-          this.talks = courses;
-          // this.talks = this.talks.map(talk => ({ ...talk, class: false }));
-          // console.log(this.talks);
-          this.isLoading = false;
+    // this.talkService.getAllTalks().subscribe(
+    //   ({courses})=>{
+    //     if(courses.length !== 0){
+    //       // this.talks = courses;
+    //       // this.talks = this.talks.map(talk => ({ ...talk, class: false }));
+    //       // console.log(this.talks);
+    //       this.isLoading = false;
 
-        }
-      })
+    //     }
+    //   })
   }
    
 
@@ -42,16 +42,46 @@ export class InscriptionComponent implements OnInit {
       });
   }
 
-  getInscriptions( inscriptions : any ){
+
+  talks: any[] = [];
+  selectedTalk: string | null = null;
+
+
+  getInscriptions(inscriptions: any) {
+
+    const talkDictionary: { [subject: string]: any[] } = {};
   
-  inscriptions.map( (element:any)=>{ element.inscription.forEach( (item:any) => {
-          if(item.subject === "Programación y robotica"){
-              this.subject1 ++;
-          }else if(item.subject === "Programación y robotica especializada"){
-              this.subject2 ++;
+    inscriptions.forEach((element: any) => {
+      element.inscription.forEach((item: any) => {
+        if (item.subject) {
+          if (!talkDictionary[item.subject]) {
+            talkDictionary[item.subject] = [element];
+          } else {
+            talkDictionary[item.subject].push(element);
           }
-    
-  });})
+        }
+      });
+    });
+  
+    // Convierte el diccionario en una matriz de objetos
+    this.talks = Object.keys(talkDictionary).map((subject) => ({
+      subject,
+      data: talkDictionary[subject],
+    }));
+  
+    console.log(this.talks);
   }
+
+  showAssistant(subject: string) {
+    if (this.selectedTalk === subject) {
+      // Si el card ya está seleccionado, deselecciónalo
+      this.selectedTalk = null;
+    } else {
+      // Si se hace clic en un card, selecciónalo
+      this.selectedTalk = subject;
+    }
+  }
+  
+  
 
 }
