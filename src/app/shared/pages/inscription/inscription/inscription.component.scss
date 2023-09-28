@@ -85,9 +85,7 @@
 /* x-large devices (desktops, 1200 px and up) */ 
 @media only screen and (min-width: 1200px) {
     
-    .selectedCardLabel{
-        width: 800px;
-    }
+ 
 
     .card{
         width: 65%;
@@ -96,17 +94,7 @@
 
     .baseCard{
         width: 65%;
-        height: 100%;
         // height: 180px;
-    }
-
-    .selectedFrame{
-        width: 65%;
-        // height: 110px;
-    }
-
-    .selectedCardLabel{
-        top: 110px;
     }
 
 }
@@ -114,5 +102,15 @@
 
 /* XX- Large devices (larger desktops, 1400px and up) */ 
 @media only screen and (min-width: 1400px) {
+
+    .card{
+        width: 65%;
+        // height: 110px;
+    }
+
+    .baseCard{
+        width: 65%;
+        // height: 180px;
+    }
 
 }

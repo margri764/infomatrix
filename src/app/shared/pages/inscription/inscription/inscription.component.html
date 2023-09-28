@@ -1,7 +1,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" >
 
-  <div fxLayout="row wrap" fxLayoutAlign="center start" fxFlex.xs="100"  fxFlex="80" class="shadow" style=" background-color: rgb(248, 248, 248); margin-top: 5px; height: 100%; " >
+  <div fxLayout="row wrap" fxLayoutAlign="center start" fxFlex.xs="100"  fxFlex="85" class="shadow" style=" background-color: rgb(248, 248, 248); margin-top: 5px; padding: 30px; " >
 
     <span class="font" style="font-size: 1.2em; text-align: center; width: 100%; margin-top: 50px;" *ngIf="talks.length === 0">Sin inscripciones</span>
 
@@ -28,32 +28,32 @@
               </div>
           </div>
           
-          <div fxLayout="row wrap" fxLayoutAlign="space-between start" class="baseCard shadow" >
+          <div fxLayout="row wrap" fxLayoutAlign="space-between start" class="baseCard shadow" style="padding: 10px;">
 
             <span class="card-text font" style="color: rgb(133, 133, 133); text-align: start; padding: 5px;" fxFlex="50">Disertante <br><b style="color: black;" >{{ talk.data[0]?.inscription[0]?.speaker }}</b></span> 
 
-            <!-- <span class="card-text font" style="color: rgb(133, 133, 133); text-align: start; padding: 5px;"  fxFlex="50" > Perfil <br><b style="color: black;">{{talk.fullName}}</b></span>  -->
+  
             
 
             <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="100" style="margin-top: 10px;">
             
               <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="50" style="padding: 5px;">
-                  <span class="material-icons notranslate" style="color: rgb(103, 103, 103);">home</span> &nbsp;&nbsp; <span style="color: black;" >{{ talk.data[0]?.inscription[0]?.location }} </span>
+                  <span class="material-icons notranslate" style="color: rgb(144, 144, 144);">home</span> &nbsp;&nbsp; <span style="color: black;" >{{ talk.data[0]?.inscription[0]?.location }} </span>
               </div>    
+
+              <div fxLayout="row wrap" fxLayoutAlign="end center" fxFlex="50" style="padding: 5px;">
               
-              <span class="material-icons" style="color: rgb(89, 89, 89);" (click)="showAssistant(talk.subject)">visibility </span>
-              
-              <button type="button" class="btn btn-sm shadow font"  [ngStyle]="{'background-color': i.class ? 'green' : 'rgb(10, 143, 238)'}"   style=" color: white; border-radius: 9px; padding: 8px; width: 120px; margin-right: 10px; margin-bottom: 10px;">Inscriptos: &nbsp;{{talk.data.length}} </button>
-              
-              
+                  <span class="material-icons" style="color: rgb(175, 175, 175); cursor: pointer; margin-right: 15px;" (click)="showAssistant(talk.subject)">visibility </span>
+                  
+                  <button type="button" class="btn btn-sm shadow font"  [ngStyle]="{'background-color': i.class ? 'green' : 'rgb(10, 143, 238)'}"   style=" color: white; border-radius: 9px; padding: 8px; width: 120px; margin-right: 10px; margin-bottom: 10px;">Inscriptos: &nbsp;{{talk.data.length}} </button>
+              </div>
             </div>
 
             <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" *ngIf=" selectedTalk === talk.subject " style="margin-bottom: 30px;" >
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100" style="padding: 5px;" *ngFor="let data of talk.data" >
-                  <!-- <span class="material-icons notranslate" style="color: rgb(103, 103, 103);">home</span> &nbsp;&nbsp; -->
-                    <span style="color: black;" >{{ data.fullName }},</span> &nbsp;&nbsp;
-                    <span style="color: black;" *ngIf="data.student">Estudiante </span> 
-                    <span style="color: black;" *ngIf="data.teacher">Estudiante </span>
+                <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="100" style="padding: 5px; border-top: 2px solid rgb(219, 219, 219); " *ngFor="let data of talk.data" >
+                    <span style="color: black; margin-top: 10px;" >{{ data.fullName }},</span> &nbsp;&nbsp;
+                    <span style="color: black; margin-top: 10px;" *ngIf="data.student">Estudiante </span> 
+                    <span style="color: black; margin-top: 10px;" *ngIf="data.teacher">Estudiante </span>
                 </div>  
             </div>  
           </div>

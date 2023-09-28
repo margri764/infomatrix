@@ -1,7 +1,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" >
 
-  <div fxLayout="row wrap" fxLayoutAlign="center start" fxFlex.xs="100"  fxFlex="80" class="shadow" style=" background-color: rgb(248, 248, 248); margin-top: 5px; height: 100%; " >
+  <div fxLayout="row wrap" fxLayoutAlign="center start" fxFlex.xs="100"  fxFlex="85" class="shadow" style=" background-color: rgb(248, 248, 248); margin-top: 5px; padding: 25px; " >
 
 
       <h4 class="font mt-30" style="text-align: center; margin-bottom: 30px; margin-top: 50px;" fxFlex="97"><b>Seleccioná las charlas que te interesen</b></h4>
@@ -71,11 +71,13 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100" *ngIf="selectedTalks" class="loading-overlay">
 
-    <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="97" style="background-color: white; border-radius: 12px; padding: 20px; border: 4px solid rgb(14, 121, 198);">
-      <span class="font" style="font-size: 1.1em; text-align: center;"> Luego de seleccionar las charlas que te interesen, recuerda presionar el botón de "Continuar >" </span>
-      <img src="assets/banner-phone.gif" alt="banner" fxFlex="100">
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex.xs="97" fxFlex.sm="70" fxFlex="50" style="background-color: white; border-radius: 12px; padding: 20px; border: 4px solid rgb(14, 121, 198);">
+      <span class="font" style="font-size: 1.1em; text-align: center;"> Luego de seleccionar las charlas que te interesen, recuerda presionar el botón de "Continuar" </span>
+      <img src="assets/banner-phone.gif" alt="banner" fxFlex.xs="100" fxFlex.sm="80" fxFlex="60"> 
 
-      <button type="button" class="btn btn-sm shadow font"  style="color: white; border-radius: 9px; padding: 8px; width: 120px; margin-right: 10px; background-color: rgb(10, 143, 238);" (click)="continue()">Continuar</button>
+      <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">
+        <button type="button" class="btn btn-sm shadow font"  style="color: white; border-radius: 9px; padding: 8px; width: 120px; margin-right: 10px; background-color: rgb(10, 143, 238);" (click)="continue()">Continuar</button>
+     </div>
 
   </div>
 </div>
@@ -89,7 +91,8 @@
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div> -->
   <div class="offcanvas-body">
-    <div fxLayout="row wrap" fxLayoutAlign="center start">
+
+    <div fxLayout="row wrap" fxLayoutAlign="center start" fxFlex="100">
     
     
       <div  fxLayout="row wrap"  fxLayoutAlign="start center" fxFlex="100" style="height: 60px; background-color: rgb(37, 150, 190); color: white; padding: 10px; box-shadow: 0px 6px 5px 0px rgba(140,139,139,0.75); -webkit-box-shadow: 0px 6px 5px 0px rgba(140,139,139,0.75);
@@ -102,7 +105,7 @@
             
       </div>
                 
-      <form  [formGroup]="myForm"  fxLayout="row wrap" fxLayoutAlign="center center" fxFlex.xs="90" fxFlex.sm="60" fxFlex="30" style="  margin-top: calc(100vh - 85vh); border: 1px solid rgb(197, 197, 197); border-radius: 10px; padding: 10px;" novalidate>     
+      <form  [formGroup]="myForm"  fxLayout="row wrap" fxLayoutAlign="center center"  fxFlex="90" style="  margin-top: calc(100vh - 85vh); border: 1px solid rgb(197, 197, 197); border-radius: 10px; padding: 10px;" novalidate>     
           
   
           <div class="form-floating mb-3" fxFlex="90" style="margin-top: 30px;" >

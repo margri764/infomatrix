@@ -53,6 +53,8 @@ export class TalksComponent implements OnInit, OnDestroy {
   getInitialData(){
 
     this.isLoading = true;
+    
+  
 
     this.talkService.getAllTalks()
     .pipe(
@@ -70,6 +72,7 @@ export class TalksComponent implements OnInit, OnDestroy {
     .subscribe(
       ({courses})=>{
         this.isLoading = false;
+        this.selectedTalks = true;
         if(courses.length !== 0){
           this.talks = courses;
           this.talks = this.talks.map(talk => ({ ...talk, class: false }));
